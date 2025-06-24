@@ -26,6 +26,9 @@ jobs:
     - name: Set up Docker 
       uses: docker/setup-buildx-action@v2
 
+    - name: Set up Docker Compose
+      uses: docker/setup-compose-action@v1
+
     - name: Build-DB
       run: docker-compose build
       
@@ -33,9 +36,8 @@ jobs:
       run: docker-compose up -d
 
     - name: Test
-      run: go test -v main_test.go 
+      run: go test -v main_test.go
       
-  
   build:
     needs: test
     runs-on: ${{ matrix.os }}
