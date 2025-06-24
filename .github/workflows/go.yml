@@ -14,9 +14,9 @@ jobs:
     env:
       DBHOST: localhost
       DBPORT: 5432
-      BDNAME: root
       DBUSER: root
       DBPASSWORD: root
+      DBNAME: root
     
     strategy:
       matrix:

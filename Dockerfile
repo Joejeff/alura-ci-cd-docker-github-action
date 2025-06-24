@@ -10,10 +10,10 @@ EXPOSE 8000
 WORKDIR /app
 
 ENV DBHOST=localhost \
-    DBPORT=5432 \
-    DBNAME=root \
     DBUSER=root \
-    DBPASSWORD=root
+    DBPASSWORD=root \
+    DBNAME=root \
+    DBPORT=5432
 
 COPY --from=build ./main main
 
