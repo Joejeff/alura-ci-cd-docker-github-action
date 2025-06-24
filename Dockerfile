@@ -9,9 +9,9 @@ EXPOSE 8000
 
 WORKDIR /app
 
-ENV BDHOST=localhost \
+ENV DBHOST=localhost \
     DBPORT=5432 \
-    BDNAME=root \
+    DBNAME=root \
     DBUSER=root \
     DBPASSWORD=root
 
