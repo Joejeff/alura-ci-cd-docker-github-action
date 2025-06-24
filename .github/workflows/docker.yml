@@ -18,9 +18,6 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.4.0
       with:
-        #registry:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-        #ecr:
-        #logout:
           
