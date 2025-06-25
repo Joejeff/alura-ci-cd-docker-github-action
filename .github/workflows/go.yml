@@ -45,6 +45,7 @@ jobs:
       run: go test -v main_test.go
       
   build:
+    if: ${{ github.actions == 'true' }}
     needs: test
     runs-on: ${{ matrix.os }}
     strategy:
