@@ -34,8 +34,11 @@ jobs:
     
     
     - name: Create file Artifact
+      env:
+        REF_NAME: ${{ GITHUB_REF_NAME }}
+        RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}
       run: |
-        echo "${{ GITHUB_REF_NAME }}:${{ GITHUB_RUN_NUMBER }} > version.txt"
+        echo "${{ env.REF_NAME }}:${{ env.RUN_NUMBER }} > version.txt"
 
     - name: Set up Docker Compose
       uses: docker/setup-compose-action@v1
