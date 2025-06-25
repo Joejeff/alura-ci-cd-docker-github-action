@@ -31,10 +31,11 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: ${{ matrix.go_version }}
-
-    # Step 2: Set up Docker
-    #- name: Set up Docker 
-    #  uses: docker/setup-buildx-action@v2
+    
+    
+    - name: Create file Artifact
+      run: |
+      echo "${{ GITHUB_REF_NAME }}:${{ GITHUB_RUN_NUMBER }} > version.txt"
 
     - name: Set up Docker Compose
       uses: docker/setup-compose-action@v1
@@ -64,7 +65,7 @@ jobs:
       uses: actions/upload-artifact@v4.6.2
       with:
         name: package
-        path: docker-compose.yml
+        path: version.txt
 
   docker:
     needs: build
