@@ -21,4 +21,16 @@ jobs:
       with:
         username: ${{ vars.DOCKERHUB_USER }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.18.0
+      with:
+        context: .
+        # Path to the Dockerfile
+        file: ./Dockerfile
+        push: true
+        tags: ${{ vars.DOCKERHUB_USER }}/${{ vars.DOCKER_IMAGE }}:${{ github.ref_name }}
+        # GitHub Token used to authenticate against a repository for Git context
+        #github-token: # optional, default is ${{ github.token }}
+                  
           

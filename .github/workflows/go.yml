@@ -60,6 +60,12 @@ jobs:
     - name: Build
       run: go build -v main.go
 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: package
+        path: docker-compose.yml
+
   docker:
     needs: build
     uses: ./.github/workflows/docker.yml
