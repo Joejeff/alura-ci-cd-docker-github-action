@@ -35,7 +35,7 @@ jobs:
     
     - name: Create file Artifact
       run: |
-      echo "${{ GITHUB_REF_NAME }}:${{ GITHUB_RUN_NUMBER }} > version.txt"
+        echo "${{ GITHUB_REF_NAME }}:${{ GITHUB_RUN_NUMBER }} > version.txt"
 
     - name: Set up Docker Compose
       uses: docker/setup-compose-action@v1
