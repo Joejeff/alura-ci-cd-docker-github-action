@@ -57,12 +57,12 @@ jobs:
       run: go build -v main.go
 
     - name: Create file Artifact
-      #env:
-      #  REF_NAME: ${{ GITHUB_REF_NAME }}
-      #  RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}
+      env:
+        REF_NAME: ${{ GITHUB_REF_NAME }}
+        RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}
       run: |
-        echo "${{ env.GITHUB_REF_NAME }}:${{ env.GITHUB_RUN_NUMBER }} > version.txt"
-        #echo "${{ env.REF_NAME }}:${{ env.RUN_NUMBER }} > version.txt"
+        #echo "${{ env.GITHUB_REF_NAME }}:${{ env.GITHUB_RUN_NUMBER }} > version.txt"
+        echo "${{ env.REF_NAME }}:${{ env.RUN_NUMBER }} > ${{ RUNNER_WORKSPACE }}/version.txt"
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.6.2
