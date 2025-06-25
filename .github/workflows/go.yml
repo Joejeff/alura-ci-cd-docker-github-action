@@ -31,14 +31,6 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: ${{ matrix.go_version }}
-    
-    
-    - name: Create file Artifact
-      env:
-        REF_NAME: ${{ GITHUB_REF_NAME }}
-        RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}
-      run: |
-        echo "${{ env.REF_NAME }}:${{ env.RUN_NUMBER }} > version.txt"
 
     - name: Set up Docker Compose
       uses: docker/setup-compose-action@v1
@@ -63,6 +55,14 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: go build -v main.go
+
+    - name: Create file Artifact
+      #env:
+      #  REF_NAME: ${{ GITHUB_REF_NAME }}
+      #  RUN_NUMBER: ${{ GITHUB_RUN_NUMBER }}
+      run: |
+        echo "${{ GITHUB_REF_NAME }}:${{ GITHUB_RUN_NUMBER }} > version.txt"
+        #echo "${{ env.REF_NAME }}:${{ env.RUN_NUMBER }} > version.txt"
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.6.2
