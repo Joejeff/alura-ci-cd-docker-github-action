@@ -8,8 +8,9 @@ on:
 
 jobs:
   test:
+    if: ${{ github.actions == 'false' }}
     runs-on: ${{ matrix.os }}
-    if: ${{ GITHUB_ACTIONS == 'false' }}
+    
     env:
       DBHOST: localhost
       DBPORT: 5432
