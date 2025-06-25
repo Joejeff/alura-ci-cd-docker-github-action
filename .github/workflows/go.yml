@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    if: ${{ github.actions == 'false' }}
+    if: false
     runs-on: ${{ matrix.os }}
     
     env:
@@ -45,7 +45,6 @@ jobs:
       run: go test -v main_test.go
       
   build:
-    if: ${{ github.actions == 'true' }}
     needs: test
     runs-on: ${{ matrix.os }}
     strategy:
