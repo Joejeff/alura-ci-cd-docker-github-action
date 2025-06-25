@@ -1,11 +1,11 @@
-# syntax=docker/dockerfile:1
 FROM golang:1.15 AS build
-#WORKDIR /src
-RUN go build -o /main ./main.go
+
+WORKDIR /app
+COPY . .
+RUN go build -o main .
+
 
 FROM ubuntu:latest
-
-EXPOSE 8000
 
 WORKDIR /app
 
@@ -15,6 +15,8 @@ ENV DBHOST=localhost \
     DBNAME=root \
     DBPORT=5432
 
-COPY --from=build ./main main
+COPY --from=build /app/main .
+
+EXPOSE 8000
 
 CMD [ "./main" ]
