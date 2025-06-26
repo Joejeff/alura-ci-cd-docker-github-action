@@ -58,8 +58,8 @@ jobs:
 
     - name: Create file Artifact
       env:
-        REF_NAME: "${{ GITHUB_REF_NAME }}"
-        RUN_NUMBER: "${{ GITHUB_RUN_NUMBER }}"
+        REF_NAME: "${{ env.GITHUB_REF_NAME }}"
+        RUN_NUMBER: "{{ env.GITHUB_RUN_NUMBER }}"
       run: |
         pwd
         echo "${{ REF_NAME }}:${{ RUN_NUMBER }}" > ${{ GITHUB.WORKSPACE }}/version.txt
