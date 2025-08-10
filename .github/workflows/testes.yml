@@ -16,4 +16,6 @@ jobs:
 
     - name: Echo ENVs  
       run: |
-        env
+        #env
+        pwd
+        id
