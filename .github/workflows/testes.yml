@@ -13,18 +13,13 @@ jobs:
     
     - name: Checkout
       uses: actions/checkout@v4.2.2
+  
+    - name: Checkout segundo repo
+      uses: actions/checkout@v4.2.2
       with:
         repository: Joejeff/rotten-potatoes
         #ref: main
-        path: repo2
-      
-
-    # - name: Checkout segundo repo
-    #   uses: actions/checkout@v4.2.2
-    #   with:
-    #     repository: Joejeff/rotten-potatoes
-    #     #ref: main
-    #     path: repo2
+        #path: repo2
         
 
     - name: Echo ENVs  
