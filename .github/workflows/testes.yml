@@ -19,12 +19,15 @@ jobs:
       with:
         repository: Joejeff/rotten-potatoes
         #ref: main
-        path: rotten-potatoes
+        path: repo2
         
 
     - name: Echo ENVs  
       run: |
         #env
-        #pwd
+        pwd
         #id
+        echo "ls pwd"
         ls -lhart
+        echo "ls repo2"
+        ls -lh repo2
