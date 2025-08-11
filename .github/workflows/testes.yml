@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v4.2.2
       with:
         repository: Joejeff/scripts
-        #ref: main
+        ref: main
         path: repositorio2
         
 
