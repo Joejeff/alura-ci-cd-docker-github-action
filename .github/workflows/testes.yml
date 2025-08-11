@@ -18,12 +18,13 @@ jobs:
       uses: actions/checkout@v4.2.2
       with:
         repository: Joejeff/rotten-potatoes
-        ref: main
+        #ref: main
         path: rotten-potatoes
         
 
     - name: Echo ENVs  
       run: |
         #env
-        pwd
-        id
+        #pwd
+        #id
+        ls -lhart
