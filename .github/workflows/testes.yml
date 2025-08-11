@@ -19,7 +19,7 @@ jobs:
       with:
         repository: Joejeff/scripts
         ref: main
-        path: repositorio2
+        path: scripts
         
 
     - name: Echo ENVs  
