@@ -17,7 +17,7 @@ jobs:
     - name: Checkout segundo repo
       uses: actions/checkout@v4.2.2
       with:
-        repository: Joejeff/scripts.git
+        repository: https://github.com/Joejeff/scripts.git
 
     - name: Echo ENVs  
       run: |
