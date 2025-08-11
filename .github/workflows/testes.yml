@@ -17,9 +17,9 @@ jobs:
     - name: Checkout segundo repo
       uses: actions/checkout@v4.2.2
       with:
-        repository: Joejeff/scripts
+        repository: Joejeff/rotten-potatoes
         ref: main
-        path: scripts
+        path: rotten-potatoes
         
 
     - name: Echo ENVs  
